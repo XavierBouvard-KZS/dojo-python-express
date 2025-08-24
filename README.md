@@ -11,6 +11,7 @@
     - [Etape 2: ruff](#etape-2-ruff)
     - [Etape 3: mypy \& ty](#etape-3-mypy--ty)
     - [Etape 4: pytest](#etape-4-pytest)
+    - [Etape 5: python-semantic-release](#etape-5-python-semantic-release)
   - [🛡️ Documentation Technique – Script de Chiffrement/Déchiffrement AES-256 CBC](#️-documentation-technique--script-de-chiffrementdéchiffrement-aes-256-cbc)
     - [🔍 Vue d'ensemble](#-vue-densemble)
     - [🔐 Processus de chiffrement](#-processus-de-chiffrement)
@@ -102,6 +103,13 @@ uv run ty check
 uv add --dev pytest
 uv run pytest
 echo '__pycache__' >> .gitignore
+```
+
+### Etape 5: python-semantic-release
+
+```bash
+uv add --dev python-semantic-release
+uv run semantic-release --noop version --print
 ```
 
 ## 🛡️ Documentation Technique – Script de Chiffrement/Déchiffrement AES-256 CBC

@@ -7,6 +7,7 @@
   - [Présentation](#présentation)
   - [Déroulé du dojo](#déroulé-du-dojo)
   - [Corrections](#corrections)
+    - [Etape 1: UV](#etape-1-uv)
   - [🛡️ Documentation Technique – Script de Chiffrement/Déchiffrement AES-256 CBC](#️-documentation-technique--script-de-chiffrementdéchiffrement-aes-256-cbc)
     - [🔍 Vue d'ensemble](#-vue-densemble)
     - [🔐 Processus de chiffrement](#-processus-de-chiffrement)
@@ -53,6 +54,20 @@ Ce Dojo se déroule en 6 étapes dont voici le contenu et les branches contenant
 ## Corrections
 
 Cette section contient les corrections pour chacune des étapes.
+
+### Etape 1: UV
+
+(Installer UV: <https://docs.astral.sh/uv/getting-started/installation/>)
+
+```bash
+uv init
+uv run main.py
+uv add cryptography
+uv run main.py
+uv run main.py -e ./test_fichiers/ex1.txt
+uv run main.py -d ./test_fichiers/ex1.txt.enc
+rm ./test_fichiers/ex1.txt.enc
+```
 
 ## 🛡️ Documentation Technique – Script de Chiffrement/Déchiffrement AES-256 CBC
 

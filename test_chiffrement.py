@@ -11,7 +11,7 @@ def fichiers_identiques(file1, file2):
     return sha256sum(file1) == sha256sum(file2)
 
 
-def tester_chiffrement_dossier(dossier):
+def tester_chiffrement_dossier(dossier=DOSSIER_TEST):
     fichiers = [
         f for f in os.listdir(dossier) if os.path.isfile(os.path.join(dossier, f))
     ]
@@ -35,10 +35,7 @@ def tester_chiffrement_dossier(dossier):
         decrypt_file(fichier_chiffre, MOT_DE_PASSE)
 
         # Vérification : fichier déchiffré doit correspondre au fichier initial
-        if fichiers_identiques(chemin, chemin_temp):
-            print(f"✅ {fichier} : original et déchiffré identiques.")
-        else:
-            print(f"❌ {fichier} : ⚠️ original ≠ déchiffré !")
+        assert fichiers_identiques(chemin, chemin_temp)
 
         # Nettoyage
         os.remove(chemin_temp)

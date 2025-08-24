@@ -10,6 +10,7 @@
     - [Etape 1: UV](#etape-1-uv)
     - [Etape 2: ruff](#etape-2-ruff)
     - [Etape 3: mypy \& ty](#etape-3-mypy--ty)
+    - [Etape 4: pytest](#etape-4-pytest)
   - [🛡️ Documentation Technique – Script de Chiffrement/Déchiffrement AES-256 CBC](#️-documentation-technique--script-de-chiffrementdéchiffrement-aes-256-cbc)
     - [🔍 Vue d'ensemble](#-vue-densemble)
     - [🔐 Processus de chiffrement](#-processus-de-chiffrement)
@@ -93,6 +94,14 @@ uv run mypy .
 # Ty
 uv add --dev ty
 uv run ty check
+```
+
+### Etape 4: pytest
+
+```bash
+uv add --dev pytest
+uv run pytest
+echo '__pycache__' >> .gitignore
 ```
 
 ## 🛡️ Documentation Technique – Script de Chiffrement/Déchiffrement AES-256 CBC

@@ -6,11 +6,15 @@ from main import encrypt_file, decrypt_file, sha256sum
 DOSSIER_TEST = "test_fichiers"
 MOT_DE_PASSE = "MotDePasseTest123"
 
+
 def fichiers_identiques(file1, file2):
     return sha256sum(file1) == sha256sum(file2)
 
+
 def tester_chiffrement_dossier(dossier):
-    fichiers = [f for f in os.listdir(dossier) if os.path.isfile(os.path.join(dossier, f))]
+    fichiers = [
+        f for f in os.listdir(dossier) if os.path.isfile(os.path.join(dossier, f))
+    ]
     print(f"🔍 Test de {len(fichiers)} fichiers dans le dossier '{dossier}'...\n")
 
     for fichier in fichiers:
@@ -41,6 +45,7 @@ def tester_chiffrement_dossier(dossier):
         os.remove(fichier_chiffre)
 
         print("----")
+
 
 if __name__ == "__main__":
     if not os.path.isdir(DOSSIER_TEST):

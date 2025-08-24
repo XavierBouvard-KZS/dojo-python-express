@@ -8,6 +8,7 @@
   - [Déroulé du dojo](#déroulé-du-dojo)
   - [Corrections](#corrections)
     - [Etape 1: UV](#etape-1-uv)
+    - [Etape 2: ruff](#etape-2-ruff)
   - [🛡️ Documentation Technique – Script de Chiffrement/Déchiffrement AES-256 CBC](#️-documentation-technique--script-de-chiffrementdéchiffrement-aes-256-cbc)
     - [🔍 Vue d'ensemble](#-vue-densemble)
     - [🔐 Processus de chiffrement](#-processus-de-chiffrement)
@@ -67,6 +68,18 @@ uv run main.py
 uv run main.py -e ./test_fichiers/ex1.txt
 uv run main.py -d ./test_fichiers/ex1.txt.enc
 rm ./test_fichiers/ex1.txt.enc
+```
+
+### Etape 2: ruff
+
+```bash
+uv add --dev ruff
+uv run ruff check
+uv run ruff check --fix
+uv run ruff check
+uv run ruff format
+uv run ruff format --check
+uv run ruff format
 ```
 
 ## 🛡️ Documentation Technique – Script de Chiffrement/Déchiffrement AES-256 CBC

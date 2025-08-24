@@ -9,6 +9,7 @@
   - [Corrections](#corrections)
     - [Etape 1: UV](#etape-1-uv)
     - [Etape 2: ruff](#etape-2-ruff)
+    - [Etape 3: mypy \& ty](#etape-3-mypy--ty)
   - [🛡️ Documentation Technique – Script de Chiffrement/Déchiffrement AES-256 CBC](#️-documentation-technique--script-de-chiffrementdéchiffrement-aes-256-cbc)
     - [🔍 Vue d'ensemble](#-vue-densemble)
     - [🔐 Processus de chiffrement](#-processus-de-chiffrement)
@@ -80,6 +81,18 @@ uv run ruff check
 uv run ruff format
 uv run ruff format --check
 uv run ruff format
+```
+
+### Etape 3: mypy & ty
+
+```bash
+# Mypy
+uv add --dev mypy
+uv run mypy .
+
+# Ty
+uv add --dev ty
+uv run ty check
 ```
 
 ## 🛡️ Documentation Technique – Script de Chiffrement/Déchiffrement AES-256 CBC

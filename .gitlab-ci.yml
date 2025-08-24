@@ -1,0 +1,51 @@
+variables:
+  UV_VERSION: "0.7.2"
+  PYTHON_VERSION: "3.12"
+  BASE_LAYER: bookworm-slim
+  # GitLab CI creates a separate mountpoint for the build directory,
+  # so we need to copy instead of using hard links.
+  UV_LINK_MODE: copy
+
+image: ghcr.io/astral-sh/uv:$UV_VERSION-python$PYTHON_VERSION-$BASE_LAYER
+
+stages:
+  - lint
+  - type-check
+  - test
+  - release
+
+ruff_check:
+  stage: lint
+  script:
+    - uv run ruff check
+
+ruff_format_check:
+  stage: lint
+  script:
+    - uv run ruff format --check
+
+mypy_check:
+  stage: type-check
+  script:
+    - uv run mypy .
+
+ty_check:
+  stage: type-check
+  script:
+    - uv run ty check
+
+pytest:
+  stage: test
+  script:
+    - uv run pytest
+
+semantic_release:
+  stage: release
+  before_script:
+    - apt-get update && apt-get install -y git
+  script:
+    - |
+      git fetch origin $CI_COMMIT_REF_NAME
+      git checkout $CI_COMMIT_REF_NAME
+      git fetch --tags --unshallow || git fetch --tags
+    - uv run semantic-release version

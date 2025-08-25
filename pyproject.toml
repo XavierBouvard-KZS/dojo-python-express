@@ -20,8 +20,3 @@ dev = [
 [tool.semantic_release.branches.main]
 match = "(main|master)"
 prerelease = false
-
-[tool.semantic_release.remote]
-name = "origin"
-type = "gitlab"
-token = { env = "GITLAB_TOKEN" }

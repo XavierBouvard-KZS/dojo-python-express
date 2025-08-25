@@ -13,6 +13,7 @@
     - [Etape 4: pytest](#etape-4-pytest)
     - [Etape 5: python-semantic-release](#etape-5-python-semantic-release)
     - [Etape 6: gitlab ci](#etape-6-gitlab-ci)
+    - [Etape 7: github ci](#etape-7-github-ci)
   - [🛡️ Documentation Technique – Script de Chiffrement/Déchiffrement AES-256 CBC](#️-documentation-technique--script-de-chiffrementdéchiffrement-aes-256-cbc)
     - [🔍 Vue d'ensemble](#-vue-densemble)
     - [🔐 Processus de chiffrement](#-processus-de-chiffrement)
@@ -115,8 +116,25 @@ uv run semantic-release --noop version --print
 
 ### Etape 6: gitlab ci
 
+Demander à copilot avec le prompt suivant:
+
 ```prompt
 generates a gitlabci files that runs in separated jobs the following commands:
+
+- uv run ruff check
+- uv run ruff format --check
+- uv run mypy .
+- uv run ty check
+- uv run pytest
+- uv run semantic-release version
+```
+
+### Etape 7: github ci
+
+demander à copilot avec le prompt suivant:
+
+```prompt
+generates a github action files that runs as separated steps the following commands:
 
 - uv run ruff check
 - uv run ruff format --check
